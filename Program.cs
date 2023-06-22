@@ -58,6 +58,15 @@ namespace CatWorx.BadgeMaker
             string secondFood = favFoods[1];
             string thirdfood = favFoods[2];
             Console.WriteLine("i like {0}, {1}, and {2}", firstFood, secondFood, thirdfood);
+            List<string> employees = new List<string>() { "adam", "amy" };
+
+            employees.Add("barbara");
+            employees.Add("billy");
+            Console.WriteLine("My employees include {0}, {1}, {2}, {3}", employees[0], employees[1], employees[2], employees[3]);
+            for (int i = 0; i<employees.Count; i++)
+            {
+                Console.WriteLine(employees[i]);
+            }
         }
     }
 }
