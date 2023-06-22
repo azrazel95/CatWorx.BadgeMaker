@@ -32,6 +32,10 @@ namespace CatWorx.BadgeMaker
             bool isCold = true;
             Console.WriteLine(isCold ? "drink" : "add ice");
             Console.WriteLine(!isCold ? "drink" : "add ice");
+            string stringNum = "2";
+            Console.WriteLine(stringNum);
+            Int32 numString = Convert.ToInt32(stringNum);
+            Console.WriteLine($"{ numString}, {numString.GetType()}");
         }
     }
 }
