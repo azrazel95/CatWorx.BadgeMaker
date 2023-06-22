@@ -14,6 +14,7 @@ namespace CatWorx.BadgeMaker
             double side = 3.14;
             double area = side * side;
             Console.WriteLine(area);
+            Console.WriteLine("area is a {0}", area.GetType().Name);
         }
     }
 }
