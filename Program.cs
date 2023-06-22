@@ -28,6 +28,10 @@ namespace CatWorx.BadgeMaker
             Console.WriteLine(num);
             num++;
             Console.WriteLine(num);
+
+            bool isCold = true;
+            Console.WriteLine(isCold ? "drink" : "add ice");
+            Console.WriteLine(!isCold ? "drink" : "add ice");
         }
     }
 }
