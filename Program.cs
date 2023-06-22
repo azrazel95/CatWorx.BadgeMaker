@@ -53,6 +53,11 @@ namespace CatWorx.BadgeMaker
             Console.WriteLine("   3   | {0}", myScoreBoard["thirdInning"]);
             Console.WriteLine("   4   | {0}", myScoreBoard["fourthInning"]);
             Console.WriteLine("   5   | {0}", myScoreBoard["fifthInning"]);
+            string[] favFoods = new string[3] { "pizza", "doughnuts", "icecream" };
+            string firstFood = favFoods[0];
+            string secondFood = favFoods[1];
+            string thirdfood = favFoods[2];
+            Console.WriteLine("i like {0}, {1}, and {2}", firstFood, secondFood, thirdfood);
         }
     }
 }
