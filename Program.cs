@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace CatWorx.BadgeMaker
 {
     class Program
@@ -21,7 +22,7 @@ namespace CatWorx.BadgeMaker
             Console.WriteLine(1 + 2 * 3);     // order of operations
             Console.WriteLine(10 / 3.0);      // int's and doubles
             Console.WriteLine(10 / 3);        // int's 
-            
+
 
             int num = 10;
             num += 100;
@@ -35,7 +36,23 @@ namespace CatWorx.BadgeMaker
             string stringNum = "2";
             Console.WriteLine(stringNum);
             Int32 numString = Convert.ToInt32(stringNum);
-            Console.WriteLine($"{ numString}, {numString.GetType()}");
+            Console.WriteLine($"{numString}, {numString.GetType()}");
+            Dictionary<string, int> myScoreBoard = new Dictionary<string, int>() { 
+            { "firstInning", 10},
+            { "secondInning", 20},
+            { "thirdInning", 30 },};
+            myScoreBoard.Add("fourthInning", 40);
+            myScoreBoard.Add("fifthInning", 50);
+
+            Console.WriteLine("------------");
+            Console.WriteLine(" Scoreboard ");
+            Console.WriteLine("------------");
+            Console.WriteLine("Inning | Score");
+            Console.WriteLine("   1   | {0}", myScoreBoard["firstInning"]);
+            Console.WriteLine("   2   | {0}", myScoreBoard["secondInning"]);
+            Console.WriteLine("   3   | {0}", myScoreBoard["thirdInning"]);
+            Console.WriteLine("   4   | {0}", myScoreBoard["fourthInning"]);
+            Console.WriteLine("   5   | {0}", myScoreBoard["fifthInning"]);
         }
     }
 }
