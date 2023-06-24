@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SkiaSharp;
 
 namespace CatWorx.BadgeMaker
 {
@@ -26,13 +27,20 @@ namespace CatWorx.BadgeMaker
             }
             using (StreamWriter file = new StreamWriter("data/employees.csv"))
             {
+                
                 file.WriteLine("ID,Name,PhotoUrl");
                 for (int i = 0; i < employees.Count;i++)
                 {
+                    //file.import(image)
                     string template = "{0},{1},{2}";
                     file.WriteLine(String.Format(template, employees[i].GetId(), employees[i].GetFullName(), employees[i].GetPhotoUrl()));
+                    //file.save name${i}
                 }
             }
+        }
+        async public static Task MakeBadges(List<Employee> employees)
+        {
+            SKImage newIamge = SKImage.FromEncodedData(File.OpenRead("badge.png"));
         }
     }
 }
