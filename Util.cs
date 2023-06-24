@@ -72,7 +72,7 @@ namespace CatWorx.BadgeMaker
                     canvas.DrawText(employees[i].GetId().ToString(), BADGE_WIDTH / 2f, EMPLOYEE_ID_Y, paint);
                     SKImage finalImage = SKImage.FromBitmap(badge);
                     SKData data = finalImage.Encode();
-                    using (var fileStream = File.OpenWrite("data/employeeBadge.png"))
+                    using (var fileStream = File.OpenWrite($"data/employeeBadge{i}.png"))
                     {
                         data.SaveTo(fileStream);
                     }
