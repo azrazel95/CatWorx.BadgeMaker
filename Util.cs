@@ -41,13 +41,16 @@ namespace CatWorx.BadgeMaker
         }
         async public static Task MakeBadges(List<Employee> employees)
         {
-
+            int BADGE_WIDTH = 669;
+            int BADGE_HEIGHT = 1044;
             using (HttpClient client = new HttpClient())
             {
                 for (int i = 0; i < employees.Count; i++)
                 {
                     SKImage photo = SKImage.FromEncodedData(await client.GetStreamAsync(employees[i].GetPhotoUrl()));
-                    SKData data = photo.Encode();
+                    SKImage background = SKImage.FromEncodedData(File.OpenRead("badge.png"));
+                    SKBitmap badge = new SKBitmap(BADGE_WIDTH, BADGE_HEIGHT);
+                    SKData data = background.Encode();
                     data.SaveTo(File.OpenWrite("data/employeeBadge.png"));
                 }
             }
