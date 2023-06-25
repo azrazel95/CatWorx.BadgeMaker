@@ -4,6 +4,29 @@ namespace CatWorx.BadgeMaker
 {
     class Util
     {
+
+        public static List<Employee> GetEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+            while (true)
+            {
+                Console.WriteLine("Please enter a name: (leave empty to exit): ");
+                string firstName = Console.ReadLine() ?? "";
+                if (firstName == "")
+                { break; }
+                Console.Write("Enter last name: ");
+                string lastName = Console.ReadLine() ?? " ";
+                Console.Write("Enter Id: ");
+                int id = Int32.Parse(Console.ReadLine() ?? "");
+                Console.Write("Enter Photo Url: ");
+                string photoUrl = Console.ReadLine() ?? "";
+                Employee currentEmployee = new Employee(firstName, lastName, id, photoUrl);
+                employees.Add(currentEmployee);
+
+            }
+            return employees;
+        }
+
         public static void PrintEmployees(List<Employee> employees)
         {
 
