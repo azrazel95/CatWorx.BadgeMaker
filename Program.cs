@@ -11,7 +11,7 @@ namespace CatWorx.BadgeMaker
 
         
         async static Task Main(string[] args) {
-
+            Console.WriteLine("Hello and welcome to CatWorx Badgemaker!\n ");
             List<Employee> employees = await PeopleFetcher.GetFromApi();
             Util.PrintEmployees(employees);
             Util.MakeCSV(employees);
